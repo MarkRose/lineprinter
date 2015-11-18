@@ -1,15 +1,17 @@
 package ca.markrose.lineprinter;
 
+
+/**
+ * Prints out lines.
+ */
 public class LinePrinter {
-    
-    public static void main(String[] args) {
+
+    public static void main(final String[] args) {
         if (args.length != 1) {
             System.err.println("An argument that is a directory or file must be passed.");
-            
-            return;
+        } else {
+            new DirectoryLinePrinter().run(args[0]);
         }
-        
-        new DirectoryLinePrinter(args[0]).run();
     }
 }
 
